@@ -13,6 +13,8 @@ namespace Biblioteca.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static Container Container;
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -20,10 +22,10 @@ namespace Biblioteca.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
-            Container container = new Container();
-            container.Register<ILivroRepository, LivroRepository>();
-            container.Register<IRevistaRepository, RevistaRepository>();
-            container.Verify();
+            Container = new Container();
+            Container.Register<ILivroRepository, LivroRepository>();
+            Container.Register<IRevistaRepository, RevistaRepository>();
+            Container.Verify();
         }
     }
 }
