@@ -7,105 +7,105 @@ using System.Web.Mvc;
 
 namespace Biblioteca.Web.Controllers
 {
-    public class LivrosController : Controller
+    public class RevistasController : Controller
     {
-        ILivroRepository livros = MvcApplication.Container.GetInstance<ILivroRepository>();
+        IRevistaRepository revistas = MvcApplication.Container.GetInstance<IRevistaRepository>();
 
-        // GET: Livros
+        // GET: Revistas
         public async Task<ActionResult> Index()
         {
-            return View(await Task.Run(() => livros.GetAll().ToList()));
+            return View(await Task.Run(() => revistas.GetAll().ToList()));
         }
 
-        // GET: Livros/Details/5
+        // GET: Revistas/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Livro livro = await Task.Run(() => livros.GetById(id.Value));
-            if (livro == null)
+            Revista revista = await Task.Run(() => revistas.GetById(id.Value));
+            if (revista == null)
             {
                 return HttpNotFound();
             }
-            return View(livro);
+            return View(revista);
         }
 
-        // GET: Livros/Create
+        // GET: Revistas/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Livros/Create
+        // POST: Revistas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,ISBN,Titulo,Autor,DataPublicacao,Versao,Genero,PalavraChave,Sinopse")] Livro livro)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Nome,DataPublicacao,Genero,PalavraChave,Sinopse")] Revista revista)
         {
             if (ModelState.IsValid)
             {
-                await Task.Run(() => livros.Add(livro));
+                await Task.Run(() => revistas.Add(revista));
                 return RedirectToAction("Index");
             }
 
-            return View(livro);
+            return View(revista);
         }
 
-        // GET: Livros/Edit/5
+        // GET: Revistas/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Livro livro = await Task.Run(() => livros.GetById(id.Value));
-            if (livro == null)
+            Revista revista = await Task.Run(() => revistas.GetById(id.Value));
+            if (revista == null)
             {
                 return HttpNotFound();
             }
-            return View(livro);
+            return View(revista);
         }
 
-        // POST: Livros/Edit/5
+        // POST: Revistas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,ISBN,Titulo,Autor,DataPublicacao,Versao,Genero,PalavraChave,Sinopse")] Livro livro)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Nome,DataPublicacao,Genero,PalavraChave,Sinopse")] Revista revista)
         {
             if (ModelState.IsValid)
             {
-                await Task.Run(() => livros.Update(livro));
+                await Task.Run(() => revistas.Update(revista));
                 return RedirectToAction("Index");
             }
-            return View(livro);
+            return View(revista);
         }
 
-        // GET: Livros/Delete/5
+        // GET: Revistas/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Livro livro = await Task.Run(() => livros.GetById(id.Value));
-            if (livro == null)
+            Revista revista = await Task.Run(() => revistas.GetById(id.Value));
+            if (revista == null)
             {
                 return HttpNotFound();
             }
-            return View(livro);
+            return View(revista);
         }
 
-        // POST: Livros/Delete/5
+        // POST: Revistas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Livro livro = await Task.Run(() => livros.GetById(id));
-            await Task.Run(() => livros.Remove(livro));
+            Revista revista = await Task.Run(() => revistas.GetById(id));
+            await Task.Run(() => revistas.Remove(revista));
             return RedirectToAction("Index");
         }
 
@@ -113,7 +113,7 @@ namespace Biblioteca.Web.Controllers
         {
             if (disposing)
             {
-                livros = null;
+                revistas = null;
             }
             base.Dispose(disposing);
         }
