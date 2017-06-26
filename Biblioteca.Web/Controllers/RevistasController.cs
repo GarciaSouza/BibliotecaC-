@@ -43,7 +43,7 @@ namespace Biblioteca.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,Nome,DataPublicacao,Genero,PalavraChave,Sinopse")] Revista revista)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Nome,Numero,DataPublicacao,Genero,PalavraChave,Sinopse")] Revista revista)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace Biblioteca.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,Nome,DataPublicacao,Genero,PalavraChave,Sinopse")] Revista revista)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Nome,Numero,DataPublicacao,Genero,PalavraChave,Sinopse")] Revista revista)
         {
             if (ModelState.IsValid)
             {
