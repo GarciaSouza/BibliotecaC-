@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.NH", "Biblioteca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.Web", "Biblioteca.Web\Biblioteca.Web.csproj", "{BBD5D670-2D61-4EB4-9041-0BE9CE7A52C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.WebCore", "Biblioteca.WebCore\Biblioteca.WebCore.csproj", "{3025D436-9C72-4CA9-BD5E-FF7EE9A03B6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BBD5D670-2D61-4EB4-9041-0BE9CE7A52C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD5D670-2D61-4EB4-9041-0BE9CE7A52C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBD5D670-2D61-4EB4-9041-0BE9CE7A52C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3025D436-9C72-4CA9-BD5E-FF7EE9A03B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3025D436-9C72-4CA9-BD5E-FF7EE9A03B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3025D436-9C72-4CA9-BD5E-FF7EE9A03B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3025D436-9C72-4CA9-BD5E-FF7EE9A03B6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
