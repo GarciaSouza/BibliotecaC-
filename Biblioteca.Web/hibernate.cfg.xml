@@ -4,7 +4,7 @@
     <property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
     <property name="dialect">NHibernate.Dialect.MsSql2012Dialect</property>
     <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
-    <property name="connection.connection_string">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Garcia\Documents\Visual Studio 2017\Projects\Biblioteca2\Biblioteca.Web\App_Data\Biblioteca.mdf;Integrated Security=True;Connect Timeout=30</property>
+    <property name="connection.connection_string">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Garcia\Documents\Visual Studio 2017\Projects\Biblioteca2\Biblioteca.mdf;Integrated Security=True;Connect Timeout=30</property>
 
     <property name="show_sql">false</property>
   </session-factory>
